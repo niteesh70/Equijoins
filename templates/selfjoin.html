@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>selfjoins</h1>
+        <table border="5px">
+            <tr>
+                <th>Ename</th>
+                <th>Managername</th>
+                <th>sal</th>
+                <th>mgrsal</th>
+                <th>deptno</th>
+                <th>comm</th>
+                <th>mgrcomm</th>
+                <th>hiredate</th>
+                <th>mgrhiredate</th>
+                <th>job</th>
+                <th>mgrjob</th>
+            </tr>
+
+            {% for eo in EMO %}
+            <tr>
+                <td>{{eo.ename}}</td>
+                <td>{{eo.mgr.ename}}</td>
+                <td>{{eo.sal}}</td>
+                <td>{{eo.mgr.sal}}</td>
+                <td>{{eo.deptno}}</td>
+                <td>{{eo.comm}}</td>
+                <td>{{eo.mgr.comm}}</td>
+                <td>{{eo.hiredate}}</td>
+                <td>{{eo.mgr.hiredate}}</td>
+                <td>{{eo.job}}</td>
+                <td>{{eo.mgr.job}}</td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
